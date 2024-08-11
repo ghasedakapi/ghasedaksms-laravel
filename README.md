@@ -1,11 +1,3 @@
-# Very short description of the package
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ghasedaksms/ghasedaksms-laravel.svg?style=flat-square)](https://packagist.org/packages/ghasedaksms/ghasedaksms-laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/ghasedaksms/ghasedaksms-laravel.svg?style=flat-square)](https://packagist.org/packages/ghasedaksms/ghasedaksms-laravel)
-![GitHub Actions](https://github.com/ghasedaksms/ghasedaksms-laravel/actions/workflows/main.yml/badge.svg)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
-
 ## Installation
 
 You can install the package via composer:
@@ -16,14 +8,59 @@ composer require ghasedaksms/ghasedaksms-laravel
 
 ## Usage
 
+1- Put your apikey in .env file:
+
 ```php
-// Usage description here
+GHASEDAK_SMS_API_KEY="b7ee4eace78************************************************"
 ```
 
-### Testing
+2- Create a notification (for example SendOtpToUser):
 
-```bash
-composer test
+```
+php artisan make:notification SendOtpToUser
+```
+
+3- Extend SendOtpToUser from GhasedaksmsBaseNotification and fill toGhasedaksms function with DTOs:
+
+```php
+<?php
+
+namespace App\Notifications;
+
+use Carbon\Carbon;
+use Ghasedak\DataTransferObjects\Request\InputDTO;
+use Ghasedak\DataTransferObjects\Request\ReceptorDTO;
+use Ghasedaksms\GhasedaksmsLaravel\Message\GhasedaksmsVerifyLookUp;
+use Ghasedaksms\GhasedaksmsLaravel\Notification\GhasedaksmsBaseNotification;
+use Illuminate\Bus\Queueable;
+
+class SendOtpToUser extends GhasedaksmsBaseNotification
+{
+    use Queueable;
+
+    public function __construct()
+    {
+        //
+    }
+
+    public function toGhasedaksms($notifiable): GhasedaksmsVerifyLookUp
+    {
+        $message = new GhasedaksmsVerifyLookUp();
+        $message->setSendDate(Carbon::now());
+        $message->setReceptors([new ReceptorDTO($notifiable->mobile, 'client referenceId')]);
+        $message->setTemplateName('newOTP');
+        $message->setInputs([new InputDTO('code', '******')]);
+        return $message;
+    }
+}
+```
+
+4- Use SendOtpToUser
+
+```php
+$user = new \App\Models\User();
+$user->mobile = '0912*******';
+$user->notify(new \App\Notifications\SendOtpToUser());
 ```
 
 ### Changelog
