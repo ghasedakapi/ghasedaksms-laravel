@@ -1,3 +1,46 @@
+<p align="center">  
+  <a href="https://github.com/ghasedakapi/ghasedaksms-laravel">  
+    <img src="https://raw.githubusercontent.com/ghasedakapi/ghasedak-php/master/g4php.png" alt="Logo" height="200" alt="ghasedak for laravel">  
+  </a>  
+  
+  <h3 align="center">Ghasedak Laravel SDK</h3>  
+  
+  <p align="center">  
+    Easy-to-use SDK for implementing Ghasedak SMS API in your Laravel projects.
+    <br />  
+    <a href="https://ghasedak.me/php"><strong>Explore the docs »</strong></a>  
+    <br />  
+    <br />  
+    <a href="https://ghasedak.me/developers">Web Service Documents</a>  
+    ·  
+    <a href="https://ghasedak.me/docs">REST API</a>  
+    .  
+    <a href="https://github.com/ghasedakapi/ghasedaksms-laravel/issues">Report Bug</a>  
+    ·  
+    <a href="https://github.com/ghasedakapi/ghasedaksms-laravel/issues">Request Feature</a>  
+  </p>  
+</p>  
+
+<br>  
+<p align="center">
+	<a href="https://github.com/ghasedakapi/ghasedaksms-laravel/graphs/contributors"><img src="https://img.shields.io/github/contributors/ghasedakapi/ghasedaksms-laravel.svg" alt="contributors"></a>
+	<a href="https://github.com/ghasedakapi/ghasedaksms-laravel/network/members"><img src="https://img.shields.io/github/forks/ghasedakapi/ghasedaksms-laravel.svg" alt="forks"></a>
+	<a href="https://github.com/ghasedakapi/ghasedaksms-laravel/stargazers"><img src="https://img.shields.io/github/stars/ghasedakapi/ghasedaksms-laravel.svg" alt="stars"></a>
+	<a href="https://github.com/ghasedakapi/ghasedaksms-laravel/issues"><img src="https://img.shields.io/github/issues/ghasedakapi/ghasedaksms-laravel.svg" alt="issues"></a>
+	<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="license"></a>
+</p>
+
+<p align="center">  
+    <a href="#table-of-contents">English Document</a>
+</p>  
+
+## Table of Contents  
+  
+* [Install](#install)
+* [Usage](#usage)   
+* [Licence](#license)
+
+
 ## Installation
 
 You can install the package via composer:
