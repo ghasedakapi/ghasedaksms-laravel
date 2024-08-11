@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.2",
         "illuminate/support": "^v11.19.0",
-        "ghasedaksms/php": ">=v1.0.3"
+        "ghasedaksms/php": ">=v1.0.4"
     },
     "require-dev": {
         "orchestra/testbench": "^v9.1.2",
