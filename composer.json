@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^v11.19.0",
+        "illuminate/support": "10.* | 11.*",
         "ghasedaksms/php": ">=v1.0.4"
     },
     "require-dev": {
